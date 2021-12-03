@@ -1,10 +1,8 @@
 import { Grid, Typography } from '@mui/material';
 import Key from './Key';
+import { KEY_ROWS, KEYS_PER_ROW } from '../App';
 
 const Keyboard = ({ keyboard, isFinal }) => {
-	console.log(keyboard);
-	const KEY_ROWS = process.env.REACT_APP_KEY_ROWS;
-	const KEYS_PER_ROW = process.env.REACT_APP_KEYS_PER_ROW;
 	const keyboardArr = [];
 	for (let i = 0; i < KEY_ROWS; i++) {
 		keyboardArr.push(keyboard.slice(i * KEYS_PER_ROW, (i + 1) * KEYS_PER_ROW));

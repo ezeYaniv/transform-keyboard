@@ -7,15 +7,15 @@ const Key = (props) => {
 				width: 40,
 				height: 40,
 				backgroundColor: '#ddd',
-        border: "1px solid gray",
-        borderRadius: 1,
-        margin: "1px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        cursor: "default"
+				border: '1px solid gray',
+				borderRadius: 1,
+				margin: '1px',
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'center',
+				cursor: 'default',
 			}}
-      component="span">
+			component="span">
 			{props.children}
 		</Box>
 	);

@@ -6,7 +6,7 @@ import { buildOutput } from './modules/buildOutput';
 import Input from './components/Input';
 import Keyboard from './components/Keyboard';
 import Error from './components/Error';
-import Answer from './components/Answer'
+import Answer from './components/Answer';
 
 export const KEYS_PER_ROW = 10;
 export const KEY_ROWS = 4;
@@ -57,7 +57,7 @@ function App() {
 	const [keyboard, setKeyboard] = useState(INIT_KEYBOARD);
 	const [error, setError] = useState(false);
 	const [result, setResult] = useState('');
-  const [initStr, setInitStr] = useState('');
+	const [initStr, setInitStr] = useState('');
 
 	const handleSubmit = (userStr, keyTransform) => {
 		try {
@@ -65,7 +65,7 @@ function App() {
 			const strPos = indexUserStr(userStr, keyboard);
 			const finalKeyboard = transformKeyboard(keyboard, transformOps);
 			setKeyboard(finalKeyboard);
-      setInitStr(userStr);
+			setInitStr(userStr);
 			const result = buildOutput(finalKeyboard, strPos);
 			setResult(result);
 		} catch (err) {
@@ -73,17 +73,22 @@ function App() {
 		}
 	};
 
-  const resetApp = () => {
-    setKeyboard(INIT_KEYBOARD);
-    setError(false);
-    setResult('');
-    setInitStr('');
-  }
+	const resetApp = () => {
+		setKeyboard(INIT_KEYBOARD);
+		setError(false);
+		setResult('');
+		setInitStr('');
+	};
 
 	return (
 		<Box sx={{ marginTop: 10 }}>
 			<Keyboard keyboard={keyboard} isFinal={!!result} />
-			<Input handleSubmit={handleSubmit} keyboard={keyboard} isFinal={!!result} resetApp={resetApp} />
+			<Input
+				handleSubmit={handleSubmit}
+				keyboard={keyboard}
+				isFinal={!!result}
+				resetApp={resetApp}
+			/>
 			{error && <Error message={error} />}
 			{result && <Answer initial={initStr} result={result} />}
 		</Box>

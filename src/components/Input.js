@@ -36,9 +36,9 @@ const Input = ({ handleSubmit, keyboard, isFinal, resetApp }) => {
 
 	const resetForm = () => {
 		setInputData({ inputString: '', transformation: '' });
-    setErrorStr('');
-    setErrorTrans('');
-    resetApp();
+		setErrorStr('');
+		setErrorTrans('');
+		resetApp();
 	};
 
 	return (
