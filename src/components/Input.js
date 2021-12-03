@@ -23,7 +23,6 @@ const Input = ({ handleSubmit, keyboard, isFinal, resetApp }) => {
 	useEffect(() => {
 		try {
 			parseTransform(inputData.transformation);
-			console.log(parseTransform(inputData.transformation));
 			setErrorTrans('');
 		} catch (err) {
 			setErrorTrans(err.message);
